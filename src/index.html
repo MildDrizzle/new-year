@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+  <title>Ramos Lee | New Year</title>
+
+  <link rel='stylesheet' href='all.min.css'>
+</head>
+
+<body translate="no">
+
+  <button class="btn" id="fullscr">Go Fullscreen</button>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    section {
+      position: relative;
+      background: url(background.jpg);
+      background-size: cover;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .snow {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url(snow.jpeg);
+      mix-blend-mode: screen;
+    }
+
+    .snow1 {
+      animation: animateSnow1 15s linear infinite;
+    }
+
+    .snow2 {
+      animation: animateSnow2 10s linear infinite;
+    }
+
+    .snow3 {
+      animation: animateSnow3 15s linear infinite;
+    }
+
+    @keyframes animateSnow1 {
+      0% {
+        background-position: 0 0;
+      }
+
+      100% {
+        background-position: 800px 450px;
+      }
+    }
+
+    @keyframes animateSnow2 {
+      0% {
+        background-position: 0 0;
+        filter: blur(2px);
+      }
+
+      100% {
+        background-position: 800px 450px;
+        filter: blur(2px);
+      }
+    }
+
+    @keyframes animateSnow3 {
+      0% {
+        background-position: 0 0;
+        transform: scale(5);
+      }
+
+      100% {
+        background-position: 0 450px;
+        transform: scale(5);
+      }
+    }
+
+    @keyframes youtubeAnim {
+
+      0%,
+      100% {
+        color: #c9110f;
+      }
+
+      50% {
+        color: #ff0000;
+      }
+    }
+
+
+    .btn {
+      position: fixed;
+      bottom: 5%;
+      right: 0px;
+      transform: translateX(-50%);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: 5px;
+      font-size: 0.9rem;
+      padding: 0.5rem 0.7em;
+      background-color: transparent;
+      color: rgba(255, 255, 255, 0.4);
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      cursor: pointer;
+      transition: all .3s;
+      z-index: 11;
+    }
+
+    .btn_works {
+      left: 100px;
+      right: unset;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background: rgba(255, 255, 255, 0.4);
+      color: #1B1734;
+    }
+    
+  </style>
+
+  <script>
+
+    let fullscreen;
+    let bestKey = "";
+    let fsEnter = document.getElementById('fullscr');
+    fsEnter.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (!fullscreen) {
+        fullscreen = true;
+        document.documentElement.requestFullscreen();
+        fsEnter.innerHTML = "Exit Fullscreen";
+      } else {
+        fullscreen = false;
+        document.exitFullscreen();
+        fsEnter.innerHTML = "Go Fullscreen";
+      }
+    });
+
+    window.console = window.console || function (t) { };
+  </script>
+
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Snowfall animation effect using only css</title>
+  </head>
+
+  <body>
+    <section>
+      <div class="snow snow1"></div>
+      <div class="snow snow2"></div>
+      <div class="snow snow3"></div>
+    </section>
+
+  </body>
+
+  </html>
+
+
+
+
+</body>
+
+</html>
